@@ -1,8 +1,17 @@
-import type { Component } from "solid-js";
+import { Component, createSignal } from "solid-js";
 
 const App: Component = () => {
+
+  const [input, setInput] = createSignal("");
+
   return (
-    <p class="text-4xl text-green-700 text-center py-20">Hello tailwind!</p>
+    <div class="h-screen flex justify-center items-center bg-gray-900">
+      <input
+        class="p-6 max-w-sm mx-auto bg-gray-500 rounded-xl shadow-md flex items-center space-x-4 mb-100"
+        type="text"
+        oninput={event => setInput(event.currentTarget.value)}
+      />
+    </div>
   );
 };
 
