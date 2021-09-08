@@ -1,6 +1,11 @@
-import { Component, createSignal } from "solid-js";
+import { Component, createEffect, createMemo, createResource, createSignal } from "solid-js";
+import { PeriodicElement } from "./components";
 
 const App: Component = () => {
+
+  const fetchPeriodicTable = async () => (await fetch("https://neelpatel05.pythonanywhere.com/")).json();
+
+  const [periodicTable] = createResource(fetchPeriodicTable);
 
   const [input, setInput] = createSignal("");
 
