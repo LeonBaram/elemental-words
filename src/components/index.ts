@@ -1,1 +1,1 @@
-export { PeriodicElement } from "./PeriodicElement";
+export * from "./PeriodicElement";
